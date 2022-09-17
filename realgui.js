@@ -113,6 +113,20 @@ document.togglefunction = function (id) {
   chrome.management.setEnabled(id, enabled.checked);
   console.log(id + " is now " + enabled.checked);
 }
+// add search bar for extensions
+document.body.innerHTML = `
+  <div>
+    <h1>Real GUI</h1>
+    <p>Search for extensions:</p>
+    <input type="text" id="search" onkeyup="search()" placeholder="Search for extensions..">
+    <table id="table">
+      <tr>
+        <th>Extension</th>
+        <th>Enabled</th>
+      </tr>
+    </table>
+  </div>
+`;
 
 document.newtable = "<table><tr><th>Extension</th></tr>"
 chrome.management.getAll(function (extensions) {
@@ -142,7 +156,7 @@ chrome.management.getAll(function (extensions) {
       
   `
   document.body.appendChild(document.quicklinks);
-  
+
 });
 
 
