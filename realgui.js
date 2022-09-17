@@ -142,7 +142,7 @@ chrome.management.getAll(function (extensions) {
       
   `
   document.body.appendChild(document.quicklinks);
-
+  
 });
 
 
